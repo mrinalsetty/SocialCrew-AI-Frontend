@@ -37,13 +37,16 @@ export default function HomePage() {
     setData(null);
 
     try {
-      const response = await fetch("http://localhost:4000/generate", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/generate`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ topic }),
         },
-        body: JSON.stringify({ topic }),
-      });
+      );
 
       if (!response.ok) {
         throw new Error("Failed to generate content");
