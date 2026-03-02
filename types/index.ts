@@ -23,6 +23,13 @@ export type GeneratedPost = {
 };
 
 export type GenerateResponse = {
+  strategy: {
+    angle: string;
+    audienceFit: string;
+    hookStyle: string;
+    ctaApproach: string;
+    brief: string;
+  };
   contentCreator: GeneratedPost[];
   contentSummary: string;
   socialAnalyst: {
@@ -31,6 +38,10 @@ export type GenerateResponse = {
     suggestions: string[];
     positioning: string;
   };
+  agentFlow: {
+    name: string;
+    summary: string;
+  }[];
 };
 
 export type BackendHealth = {
@@ -64,6 +75,5 @@ export type HistoryItem = {
   id: string;
   topic: string;
   platform: SocialPlatform;
-  brandName: string;
   createdAt: string;
 };
