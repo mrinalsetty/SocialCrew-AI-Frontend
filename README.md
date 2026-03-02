@@ -1,5 +1,3 @@
----
-
 # SocialCrew AI Frontend
 
 Next.js frontend for **SocialCrew AI**, a multi-agent social content workspace.
@@ -7,6 +5,7 @@ Next.js frontend for **SocialCrew AI**, a multi-agent social content workspace.
 This frontend is designed to feel more like an **agentic product workspace** than a chatbot.
 
 It currently includes:
+
 - one main content input
 - platform switching
 - left sidebar history
