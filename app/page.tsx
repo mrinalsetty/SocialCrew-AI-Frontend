@@ -56,8 +56,10 @@ export default function HomePage() {
       }
     };
 
-    checkBackend();
-    const interval = setInterval(checkBackend, 15000);
+    void checkBackend();
+    const interval = setInterval(() => {
+      void checkBackend();
+    }, 15000);
 
     return () => {
       mounted = false;
@@ -133,22 +135,11 @@ export default function HomePage() {
       <div className="flex min-h-screen">
         <aside className="hidden w-[290px] shrink-0 border-r border-white/10 bg-black/30 xl:flex xl:flex-col">
           <div className="border-b border-white/10 p-5">
-            <div className="flex items-center justify-between">
-              <div>
-                <h1 className="text-xl font-bold text-cyan-400">
-                  SocialCrew AI
-                </h1>
-                <p className="mt-1 text-xs text-white/45">
-                  Agentic social content workspace
-                </p>
-              </div>
-
-              <Link
-                href="/backend"
-                className="rounded-full border border-white/10 px-3 py-1 text-xs text-white/60 transition hover:border-cyan-400/30 hover:text-cyan-300"
-              >
-                Backend
-              </Link>
+            <div>
+              <h1 className="text-xl font-bold text-cyan-400">SocialCrew AI</h1>
+              <p className="mt-1 text-xs text-white/45">
+                Agentic social content workspace
+              </p>
             </div>
 
             <button
@@ -211,7 +202,8 @@ export default function HomePage() {
                 </p>
               </div>
 
-              <div
+              <Link
+                href="/backend"
                 className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm font-medium transition ${
                   backendOnline
                     ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-300"
@@ -226,7 +218,7 @@ export default function HomePage() {
                   }`}
                 />
                 {statusLabel}
-              </div>
+              </Link>
             </div>
 
             <section className="mb-6 rounded-3xl border border-white/10 bg-white/[0.03] p-5 shadow-[0_0_0_1px_rgba(255,255,255,0.03),0_0_40px_rgba(34,211,238,0.05)]">
